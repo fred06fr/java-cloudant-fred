@@ -11,11 +11,12 @@
     Subject s = WSSubject.getCallerSubject();
     String username="unknown";
     if (s != null) {
-        Set<Principal> principals = s.getPrincipals();
-        if (principals != null && principals.size() > 0) {
+        //Set<Principal> principals = s.getPrincipals();
+        //if (principals != null && principals.size() > 0) {
             // in production this should be html encoded for safety
-            username = principals.iterator().next().getName();
-        }
+        //    username = principals.iterator().next().getName();
+        //}
+        username=s.toString();
     }
    %>
    <html>
