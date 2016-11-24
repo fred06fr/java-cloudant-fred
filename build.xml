@@ -5,7 +5,7 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
-	<condition property="ARCHIVE_DIR" value="${env.ARCHIVE_DIR}" else=".">
+	<condition property="ARCHIVE_DIR" value="${env.ARCHIVE_DIR}" else="target">
 	        <isset property="env.ARCHIVE_DIR" />
 	</condition>
 	<property name="warname" value="JavaCloudantApp.war"/>
@@ -39,13 +39,17 @@
     </target>
  
    <target name="build-war" depends="build-project">
-	  <war destfile="${ARCHIVE_DIR}/${warname}" webxml="WebContent/WEB-INF/web.xml">
+	  <war destfile="${ARCHIVE_DIR}/liberty/apps/${warname}" webxml="WebContent/WEB-INF/web.xml">
 	  	<classes dir="bin"/>
 	  	<fileset dir="WebContent">
 	  		<include name="**/*"/>
 	  		<exclude name="**/*.class"/>
 	  	</fileset>
 	  </war>
+   </target>
+   
+   <target name="copy-liberty-config">
+	  <copy file="server.xml" todir="${ARCHIVE_DIR}/liberty"/>
    </target>
 
 </project>
