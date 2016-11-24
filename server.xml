@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <server description="Fred App Server">
+ <featureManager>
+    <feature>jsp-2.3</feature>
+    <feature>json-1.0</feature>
+    <feature>jndi-1.0</feature>
+    <feature>ejbLite-3.2</feature>
+    <feature>appSecurity-2.0</feature>
+    <feature>concurrent-1.0</feature>
+    <feature>jaxrs-2.0</feature>
+  </featureManager>
  <application type="war" id="fred_app" name="fred_app" 
            location="${server.config.dir}/apps/JavaCloudantApp.war">
+           <!--
         <application-bnd>
             <security-role name="all_users">
                 <special-subject type="ALL_AUTHENTICATED_USERS"/>
             </security-role>
         </application-bnd>
+        -->
    </application>
 </server>
