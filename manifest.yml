@@ -7,5 +7,5 @@ applications:
   host: java-cloudant-fred
   disk_quota: 1024M
   services:
-  - java-cloudant-fred-cloudant
-  - sso-ldap
+  - cloudant
+  - sso
