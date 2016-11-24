@@ -24,7 +24,7 @@
         <delete dir="bin"/>
     	<delete file="${ARCHIVE_DIR}/${warname}" />
     </target>
-    <target name="build" depends="build-project,build-war"/>
+    <target name="build" depends="build-project,build-war,copy-liberty-config"/>
     <target name="cleanall" depends="clean"/>
     <target name="build-project" depends="clean,init">
     	<copy todir="${ARCHIVE_DIR}">
