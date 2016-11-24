@@ -8,4 +8,4 @@ applications:
   disk_quota: 1024M
   services:
   - java-cloudant-fred-cloudant
-  - java-cloudant-fred-sso
+  - sso-ldap
