@@ -3,7 +3,7 @@
 	<security-constraint>
 		<display-name>Fred Cloudant DB ws</display-name>
 		<web-resource-collection>
-		  <web-resource-name>all</web-resource-name>
+		  <web-resource-name>javax.ws.rs.core.Application</web-resource-name>
 		  <url-pattern>/</url-pattern>
 		  <url-pattern>/*</url-pattern>		  
 		  <http-method>GET</http-method>
